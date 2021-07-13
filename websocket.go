@@ -634,7 +634,7 @@ func (c *wsConn) handleWsConn(ctx context.Context) {
 						Jsonrpc: "2.0",
 						ID:      *req.req.ID,
 						Error: &respError{
-							Message: "handler: websocket connection closed",
+							Message: "handler: websocket connection closed: " + c.incomingErr.Error(),
 							Code:    2,
 						},
 					}
